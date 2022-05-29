@@ -1,0 +1,55 @@
+@use '/src/variables';
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;800&display=swap');
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formWrapper {
+  // border: 1px solid variables.$light-orange;
+  margin: 1rem;
+  padding: 1rem;
+  // background-color: variables.$black-tint;
+  // outline: 1rem solid variables.$black-tint;
+  font-family: 'Prompt', sans-serif;
+}
+.leaveCommentTitle {
+  color: variables.$light-orange;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.leaveCommentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.commentName,
+.commentBody {
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  width: 20rem;
+  background-color: variables.$black-tint;
+  color: variables.$white;
+  border: none;
+  font-family: 'Prompt', sans-serif;
+}
+.commentBody {
+  height: 5rem;
+}
+.inputLabel {
+  color: variables.$light-orange;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+}
+.submitComment {
+  text-transform: lowercase;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  color: variables.$light-orange;
+  padding: 0.5rem;
+  border: 1px solid variables.$light-orange;
+  cursor: pointer;
+  background-color: rgba($color: #000000, $alpha: 0);
+}

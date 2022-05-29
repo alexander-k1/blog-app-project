@@ -1,0 +1,32 @@
+@use '/src/variables';
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;800&display=swap');
+.listLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: -25vh;
+}
+.postTitles li {
+  margin-bottom: 1rem;
+}
+.title {
+  color: variables.$white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-family: 'Prompt', sans-serif;
+  display: inline-block;
+  width: 100%;
+}
+.title:hover {
+  color: variables.$light-orange;
+}
+.title::first-letter {
+  text-transform: capitalize;
+}
+.message {
+  color: variables.$light-orange;
+  font-size: 1.5rem;
+  padding-right: 1rem;
+  transform: translateY(30%);
+}

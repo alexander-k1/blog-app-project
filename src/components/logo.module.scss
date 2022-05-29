@@ -1,0 +1,80 @@
+@use '/src/variables';
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;800&display=swap');
+$cube-edge: 1.5rem;
+.container {
+  perspective: 25rem;
+  display: inline-block;
+  position: absolute;
+  transform: translateX($cube-edge * 2.25);
+  user-select: none;
+}
+.logoLetters {
+  font-family: 'Prompt', sans-serif;
+  font-weight: bold;
+  color: variables.$white;
+  font-size: $cube-edge * 1.5;
+}
+.logoLetters:nth-child(1) {
+  position: relative;
+  left: -$cube-edge * 2.95;
+}
+.logoLetters:last-child {
+  position: relative;
+  left: -$cube-edge * 1.55;
+}
+.cube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  animation-fill-mode: forwards;
+  animation: rotation 3s infinite ease-in-out;
+  display: inline-block;
+}
+@keyframes rotation {
+  0% {
+    transform: rotatex(-35deg) rotatey(-155deg);
+  }
+  50% {
+    transform: rotatex(-35deg) rotatey(25deg);
+  }
+  100% {
+    transform: rotatex(-35deg) rotatey(25deg);
+  }
+}
+.cube__face {
+  position: absolute;
+  margin: -0.5 * $cube-edge;
+  width: $cube-edge;
+  height: $cube-edge;
+  box-shadow: inset 0 0 0 2px;
+  opacity: 0.65;
+  background-color: variables.$orange;
+}
+.cube__face:nth-child(1) {
+  transform: rotate3d(0, 1, 0, 0deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(2) {
+  transform: rotate3d(0, 1, 0, 90deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(3) {
+  transform: rotate3d(0, 1, 0, 180deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(4) {
+  transform: rotate3d(0, 1, 0, 270deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(5) {
+  transform: rotate3d(1, 0, 0, 90deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(6) {
+  transform: rotate3d(1, 0, 0, -90deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(7) {
+  transform: rotate3d(1, 0, 0, -90deg) translateZ($cube-edge) scale(0.7);
+  background-color: variables.$pale-orange;
+  box-shadow: 1px 1px $cube-edge * 0.7 $cube-edge * 0.35
+      variables.$shadow-orange,
+    -1px -1px $cube-edge * 0.7 $cube-edge * 0.35 variables.$shadow-orange,
+    1px -1px $cube-edge * 0.7 $cube-edge * 0.35 variables.$shadow-orange,
+    -1px 1px $cube-edge * 0.7 $cube-edge * 0.35 variables.$shadow-orange;
+}

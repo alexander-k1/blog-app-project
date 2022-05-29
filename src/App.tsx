@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useAuthContext } from './auth-context'
+import FullPageLoading from './components/FullPageLoading'
+
+const AuthenticatedApp = React.lazy(
+  () => import('./authenticated/AuthenticatedApp')
+)
+const UnauthenticatedApp = React.lazy(
+  () => import('./unauthenticated/UnauthenticatedApp')
+)
 
 function App() {
+  const { user } = useAuthContext()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Suspense fallback={<FullPageLoading />}>
+      {user.username ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+    </React.Suspense>
+  )
 }
 
-export default App;
+export default App

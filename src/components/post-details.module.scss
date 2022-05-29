@@ -1,0 +1,103 @@
+@use '/src/variables';
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;800&display=swap');
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+}
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+}
+.error > p {
+  color: variables.$orange;
+  transform: translate(-50%, -50%);
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.3rem;
+}
+.post {
+  font-family: 'Prompt', sans-serif;
+  width: 40rem;
+  margin-top: 2rem;
+}
+.title {
+  color: variables.$orange;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.title::first-letter,
+.postText::first-letter,
+.commentBody::first-letter,
+.commentName::first-letter {
+  text-transform: capitalize;
+}
+.author {
+  color: variables.$light-orange;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.postText {
+  color: variables.$white;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+.commentList::before {
+  color: variables.$light-orange;
+  content: 'Comments';
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+.comments {
+  width: 40rem;
+}
+.postWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 0;
+}
+.comment {
+  margin-bottom: 1.2rem;
+}
+.commentName {
+  color: variables.$light-orange;
+  margin-bottom: 0.7rem;
+  font-weight: bold;
+}
+.commentBody {
+  color: variables.$white;
+  text-align: justify;
+}
+.leaveComment {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.commentsAlert,
+.loginToComment {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: variables.$light-orange;
+}
+.loginLink {
+  text-decoration-color: variables.$orange;
+  text-decoration-thickness: 2px;
+  color: variables.$orange;
+}
+.commentsAlert {
+  padding-bottom: 2rem;
+}

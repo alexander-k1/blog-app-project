@@ -1,0 +1,51 @@
+@use '/src/variables';
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;800&display=swap');
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formWrapper {
+  // border: 1px solid variables.$light-orange;
+  margin: 1rem;
+  margin-top: 3rem;
+  padding: 1rem;
+  // background-color: variables.$black-tint;
+  // outline: 1rem solid variables.$black-tint;
+  font-family: 'Prompt', sans-serif;
+}
+.loginTitle {
+  color: variables.$orange;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginInput {
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  background-color: variables.$black-tint;
+  color: variables.$white;
+  border: 1px solid variables.$light-orange;
+  font-family: 'Prompt', sans-serif;
+}
+.loginLabel {
+  color: variables.$orange;
+  padding: 0.7rem;
+  font-size: 1.3rem;
+}
+.submitLogin {
+  text-transform: lowercase;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  color: variables.$orange;
+  padding: 0.5rem;
+  border: 1px solid variables.$orange;
+  cursor: pointer;
+  background-color: rgba($color: #000000, $alpha: 0);
+}

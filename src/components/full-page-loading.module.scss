@@ -1,0 +1,14 @@
+@use '/src/variables';
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.loading {
+  color: variables.$orange;
+  font-weight: bold;
+  font-size: 2rem;
+}

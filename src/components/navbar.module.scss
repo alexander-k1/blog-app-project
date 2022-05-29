@@ -1,0 +1,80 @@
+@use '/src/variables';
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;800&display=swap');
+.appNav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid variables.$light-orange;
+  @media screen and (min-width: 820px) {
+    flex-direction: row;
+    padding-bottom: 2rem;
+  }
+  font-family: 'Prompt', sans-serif;
+  background-color: black;
+  z-index: 1;
+}
+.navLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(3rem);
+  @media screen and (min-width: 820px) {
+    position: absolute;
+    right: 1rem;
+    transform: translateY(0);
+  }
+}
+.navLinks > button {
+  border: none;
+  padding: 0;
+}
+.navLinks > a,
+.navLinks > div {
+  text-decoration: none;
+  color: variables.$white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.navLinks > a::before,
+.navLinks > div::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: variables.$orange;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transition: all 0.5s;
+  display: inline-block;
+}
+.navLinks > a:hover::before,
+.navLinks > div:hover::before {
+  width: 50%;
+  transform: translatex(-100%);
+}
+.navLinks > a::after,
+.navLinks > div::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: variables.$orange;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transition: all 0.5s;
+  display: inline-block;
+}
+.navLinks > a:hover::after,
+.navLinks > div:hover::after {
+  width: 50%;
+}

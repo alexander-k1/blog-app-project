@@ -1,0 +1,63 @@
+@use '/src/variables';
+$cube-edge: 3rem;
+.container {
+  perspective: 25rem;
+  display: inline-block;
+  position: absolute;
+}
+.cube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  animation-fill-mode: forwards;
+  animation: rotation 2s infinite linear;
+  display: inline-block;
+}
+@keyframes rotation {
+  0% {
+    transform: rotatex(-35deg) rotatey(-180deg);
+  }
+  50% {
+    transform: rotatex(-35deg) rotatey(0deg);
+  }
+  100% {
+    transform: rotatex(-35deg) rotatey(180deg);
+  }
+}
+.cube__face {
+  position: absolute;
+  margin: -0.5 * $cube-edge;
+  width: $cube-edge;
+  height: $cube-edge;
+  box-shadow: inset 0 0 0 2px;
+  opacity: 0.65;
+  background-color: variables.$orange;
+}
+.cube__face:nth-child(1) {
+  transform: rotate3d(0, 1, 0, 0deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(2) {
+  transform: rotate3d(0, 1, 0, 90deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(3) {
+  transform: rotate3d(0, 1, 0, 180deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(4) {
+  transform: rotate3d(0, 1, 0, 270deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(5) {
+  transform: rotate3d(1, 0, 0, 90deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(6) {
+  transform: rotate3d(1, 0, 0, -90deg) translateZ(0.5 * $cube-edge);
+}
+.cube__face:nth-child(7) {
+  transform: rotate3d(1, 0, 0, -90deg) translateZ($cube-edge) scale(0.7);
+  background-color: variables.$pale-orange;
+  box-shadow: 1px 1px $cube-edge * 0.7 $cube-edge * 0.35
+      variables.$shadow-orange,
+    -1px -1px $cube-edge * 0.7 $cube-edge * 0.35 variables.$shadow-orange,
+    1px -1px $cube-edge * 0.7 $cube-edge * 0.35 variables.$shadow-orange,
+    -1px 1px $cube-edge * 0.7 $cube-edge * 0.35 variables.$shadow-orange;
+}
